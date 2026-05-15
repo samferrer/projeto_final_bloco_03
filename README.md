@@ -1,73 +1,83 @@
-# React + TypeScript + Vite
+# Projeto Final Bloco 03 - Farmácia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido como atividade final do Bloco 03, com o objetivo de construir o front-end de uma aplicação de farmácia utilizando React, Vite, TypeScript, Tailwind CSS e Axios.
 
-Currently, two official plugins are available:
+A aplicação consome o recurso **Categoria** da API backend desenvolvida no Bloco 02.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Descrição do Projeto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Este projeto é o front-end de um sistema de farmácia, desenvolvido para consumir uma API local criada com NestJS.
 
-## Expanding the ESLint configuration
+Nesta aplicação, é possível realizar o CRUD completo de categorias:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Listar categorias
+- Cadastrar uma nova categoria
+- Atualizar uma categoria existente
+- Deletar uma categoria
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+O projeto foi desenvolvido sem autenticação de usuário e sem deploy, funcionando localmente.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tecnologias Utilizadas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Axios
+- Phosphor Icons
+- React Spinners
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Funcionalidades
+
+### Home
+
+Página inicial da aplicação, contendo uma apresentação do sistema da farmácia.
+
+### Navbar
+
+Componente de navegação com links para:
+
+- Home
+- Categorias
+- Cadastrar Categoria
+
+### Footer
+
+Rodapé da aplicação com informações do projeto e redes sociais.
+
+### Categorias
+
+Funcionalidades implementadas:
+
+- Listagem de todas as categorias cadastradas
+- Cadastro de nova categoria
+- Atualização de categoria existente
+- Exclusão de categoria
+
+---
+
+## Rotas da Aplicação
+
+| Rota | Descrição |
+|---|---|
+| `/` | Página Home |
+| `/categorias` | Lista todas as categorias |
+| `/cadastrarcategoria` | Cadastra uma nova categoria |
+| `/editarcategoria/:id` | Atualiza uma categoria existente |
+| `/deletarcategoria/:id` | Deleta uma categoria existente |
+
+---
+
+## Consumo da API
+
+O projeto consome o backend local da Farmácia através da URL:
+
+```ts
+http://localhost:4000
