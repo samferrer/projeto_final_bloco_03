@@ -1,10 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/navbar/NavBar'
 import Footer from './components/footer/Footer'
 import Home from './pages/home/Home'
 import ListaCategorias from './components/categorias/listarcategorias/ListaCategorias'
 import FormCategoria from './components/categorias/formcategoria/FormCategoria'
 import DeletarCategoria from './components/categorias/deletarcategoria/DeletarCategoria'
-import Navbar from './components/navbar/NavBar'
 
 function App() {
   return (

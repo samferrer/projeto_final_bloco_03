@@ -7,7 +7,7 @@ function Navbar() {
                 <div className="container flex justify-between text-lg mx-8">
                     
                     <Link to='/' className="text-2xl font-bold">
-                        Farmácia
+                        TopFarma
                     </Link>
 
                     <div className='flex gap-4'>
